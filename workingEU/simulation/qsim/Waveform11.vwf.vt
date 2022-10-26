@@ -1,0 +1,185 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "10/18/2022 21:36:17"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          EU
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module EU_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clk;
+reg [5:0] Op;
+reg [3:0] V;
+// wires                                               
+wire ALU_O0;
+wire ALU_O1;
+wire ALU_O2;
+wire ALU_O3;
+wire OUTSEL0;
+wire OUTSEL1;
+wire OUTSEL2;
+wire OUTSEL3;
+wire Reg_A0;
+wire Reg_A1;
+wire Reg_A2;
+wire Reg_A3;
+wire Reg_B0;
+wire Reg_B1;
+wire Reg_B2;
+wire Reg_B3;
+wire Reg_C0;
+wire Reg_C1;
+wire Reg_C2;
+wire Reg_C3;
+wire REGFILE0;
+wire REGFILE1;
+wire REGFILE2;
+wire REGFILE3;
+wire REGFILE4;
+wire REGFILE5;
+wire REGFILE6;
+wire REGFILE7;
+
+// assign statements (if any)                          
+EU i1 (
+// port map - connection between master ports and signals/registers   
+	.ALU_O0(ALU_O0),
+	.ALU_O1(ALU_O1),
+	.ALU_O2(ALU_O2),
+	.ALU_O3(ALU_O3),
+	.clk(clk),
+	.Op(Op),
+	.OUTSEL0(OUTSEL0),
+	.OUTSEL1(OUTSEL1),
+	.OUTSEL2(OUTSEL2),
+	.OUTSEL3(OUTSEL3),
+	.Reg_A0(Reg_A0),
+	.Reg_A1(Reg_A1),
+	.Reg_A2(Reg_A2),
+	.Reg_A3(Reg_A3),
+	.Reg_B0(Reg_B0),
+	.Reg_B1(Reg_B1),
+	.Reg_B2(Reg_B2),
+	.Reg_B3(Reg_B3),
+	.Reg_C0(Reg_C0),
+	.Reg_C1(Reg_C1),
+	.Reg_C2(Reg_C2),
+	.Reg_C3(Reg_C3),
+	.REGFILE0(REGFILE0),
+	.REGFILE1(REGFILE1),
+	.REGFILE2(REGFILE2),
+	.REGFILE3(REGFILE3),
+	.REGFILE4(REGFILE4),
+	.REGFILE5(REGFILE5),
+	.REGFILE6(REGFILE6),
+	.REGFILE7(REGFILE7),
+	.V(V)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// clk
+initial
+begin
+	clk = 1'b1;
+	# 4000;
+	repeat(9)
+	begin
+		clk = 1'b0;
+		clk = #50000 1'b1;
+		# 50000;
+	end
+	clk = 1'b0;
+	clk = #50000 1'b1;
+end 
+// Op[ 5 ]
+initial
+begin
+	Op[5] = 1'b0;
+	Op[5] = #260000 1'b1;
+	Op[5] = #100000 1'b0;
+end 
+// Op[ 4 ]
+initial
+begin
+	Op[4] = 1'b0;
+end 
+// Op[ 3 ]
+initial
+begin
+	Op[3] = 1'b0;
+	Op[3] = #160000 1'b1;
+	Op[3] = #100000 1'b0;
+end 
+// Op[ 2 ]
+initial
+begin
+	Op[2] = 1'b0;
+	Op[2] = #60000 1'b1;
+	Op[2] = #100000 1'b0;
+	Op[2] = #100000 1'b1;
+	Op[2] = #100000 1'b0;
+end 
+// Op[ 1 ]
+initial
+begin
+	Op[1] = 1'b1;
+	Op[1] = #260000 1'b0;
+end 
+// Op[ 0 ]
+initial
+begin
+	Op[0] = 1'b1;
+	Op[0] = #260000 1'b0;
+end 
+// V[ 3 ]
+initial
+begin
+	V[3] = 1'b1;
+	V[3] = #260000 1'b0;
+end 
+// V[ 2 ]
+initial
+begin
+	V[2] = 1'b0;
+end 
+// V[ 1 ]
+initial
+begin
+	V[1] = 1'b0;
+	V[1] = #160000 1'b1;
+	V[1] = #100000 1'b0;
+end 
+// V[ 0 ]
+initial
+begin
+	V[0] = 1'b0;
+	V[0] = #60000 1'b1;
+	V[0] = #100000 1'b0;
+end 
+endmodule
+

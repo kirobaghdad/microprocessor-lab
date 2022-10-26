@@ -1,0 +1,449 @@
+|EU
+ALU_O0 <= ALU_Block:inst.Out0
+Op[0] => Decoder:inst20.Sel0
+Op[1] => Decoder:inst20.Sel1
+Op[2] => Decoder:inst20.Sel2
+Op[3] => Decoder:inst20.Sel3
+Op[4] => Decoder:inst20.OP0
+Op[5] => Decoder:inst20.OP1
+V[0] => Reg_File:inst1.V0
+V[1] => Reg_File:inst1.V1
+V[2] => Reg_File:inst1.V2
+V[3] => Reg_File:inst1.V3
+ALU_O1 <= ALU_Block:inst.Out1
+ALU_O2 <= ALU_Block:inst.Out2
+ALU_O3 <= ALU_Block:inst.Out3
+clk => Reg_File:inst1.clk
+Reg_A0 <= Reg_File:inst1.Reg_A0
+Reg_A1 <= Reg_File:inst1.Reg_A1
+Reg_A2 <= Reg_File:inst1.Reg_A2
+Reg_A3 <= Reg_File:inst1.Reg_A3
+Reg_B0 <= Reg_File:inst1.Reg_B0
+Reg_B1 <= Reg_File:inst1.Reg_B1
+Reg_B2 <= Reg_File:inst1.Reg_B2
+Reg_B3 <= Reg_File:inst1.Reg_B3
+Reg_C0 <= Reg_File:inst1.Reg_C0
+Reg_C1 <= Reg_File:inst1.Reg_C1
+Reg_C2 <= Reg_File:inst1.Reg_C2
+Reg_C3 <= Reg_File:inst1.Reg_C3
+REGFILE0 <= A[0].DB_MAX_OUTPUT_PORT_TYPE
+REGFILE1 <= A[1].DB_MAX_OUTPUT_PORT_TYPE
+REGFILE2 <= A[2].DB_MAX_OUTPUT_PORT_TYPE
+REGFILE3 <= A[3].DB_MAX_OUTPUT_PORT_TYPE
+REGFILE4 <= B[0].DB_MAX_OUTPUT_PORT_TYPE
+REGFILE5 <= B[1].DB_MAX_OUTPUT_PORT_TYPE
+REGFILE6 <= B[2].DB_MAX_OUTPUT_PORT_TYPE
+REGFILE7 <= B[3].DB_MAX_OUTPUT_PORT_TYPE
+OUTSEL0 <= O_Sel0.DB_MAX_OUTPUT_PORT_TYPE
+OUTSEL1 <= O_Sel1.DB_MAX_OUTPUT_PORT_TYPE
+OUTSEL2 <= O_Sel2.DB_MAX_OUTPUT_PORT_TYPE
+OUTSEL3 <= O_Sel3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EU|ALU_Block:inst
+Out0 <= ALU:inst.OUT0
+Sel1 => ALU:inst.Sel1
+Sel0 => ALU:inst.Sel0
+A[0] => ALU:inst.A0
+A[1] => ALU:inst.A1
+A[2] => ALU:inst.A2
+A[3] => ALU:inst.A3
+B[0] => ALU:inst.B0
+B[1] => ALU:inst.B1
+B[2] => ALU:inst.B2
+B[3] => ALU:inst.B3
+Out1 <= ALU:inst.OUT1
+Out2 <= ALU:inst.OUT2
+Out3 <= ALU:inst.OUT3
+
+
+|EU|ALU_Block:inst|ALU:inst
+OUT0 <= 74153:inst3.1Y
+B0 => 74153:inst3.1C1
+B0 => FA_4:inst7.B0
+B0 => XNOR_4:inst.B0
+A0 => 74153:inst3.1C0
+A0 => FA_4:inst7.A0
+A0 => XNOR_4:inst.A0
+A1 => 74153:inst3.2C0
+A1 => FA_4:inst7.A1
+A1 => XNOR_4:inst.A1
+A3 => FA_4:inst7.A3
+A3 => XNOR_4:inst.A3
+A3 => 74153:inst4.2C0
+B3 => FA_4:inst7.B3
+B3 => XNOR_4:inst.B3
+B3 => 74153:inst4.2C1
+A2 => FA_4:inst7.A2
+A2 => XNOR_4:inst.A2
+A2 => 74153:inst4.1C0
+B2 => FA_4:inst7.B2
+B2 => XNOR_4:inst.B2
+B2 => 74153:inst4.1C1
+B1 => FA_4:inst7.B1
+B1 => XNOR_4:inst.B1
+B1 => 74153:inst3.2C1
+CIN => FA_4:inst7.CIn
+Sel1 => 74153:inst3.B
+Sel1 => 74153:inst4.B
+Sel0 => 74153:inst3.A
+Sel0 => 74153:inst4.A
+OUT1 <= 74153:inst3.2Y
+OUT2 <= 74153:inst4.1Y
+OUT3 <= 74153:inst4.2Y
+
+
+|EU|ALU_Block:inst|ALU:inst|74153:inst3
+1Y <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1GN => 26.IN0
+B => 27.IN0
+A => 29.IN0
+1C0 => 1.IN3
+1C1 => 2.IN3
+1C2 => 3.IN3
+1C3 => 4.IN3
+2Y <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2C0 => 5.IN0
+2GN => 25.IN0
+2C1 => 6.IN0
+2C2 => 7.IN0
+2C3 => 8.IN0
+
+
+|EU|ALU_Block:inst|ALU:inst|FA_4:inst7
+S0 <= Full_Adder:inst7.SUM_OUT
+CIn => Full_Adder:inst7.CIN
+A0 => Full_Adder:inst7.A
+B0 => Full_Adder:inst7.B
+S1 <= Full_Adder:inst6.SUM_OUT
+A1 => Full_Adder:inst6.A
+B1 => Full_Adder:inst6.B
+S2 <= Full_Adder:inst5.SUM_OUT
+A2 => Full_Adder:inst5.A
+B2 => Full_Adder:inst5.B
+S3 <= Full_Adder:inst4.SUM_OUT
+A3 => Full_Adder:inst4.A
+B3 => Full_Adder:inst4.B
+COUT <= Full_Adder:inst4.COUT
+
+
+|EU|ALU_Block:inst|ALU:inst|FA_4:inst7|Full_Adder:inst7
+COUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => Half_Adder:inst3.X
+B => Half_Adder:inst3.Y
+CIN => Half_Adder:inst2.X
+SUM_OUT <= Half_Adder:inst2.Sum
+
+
+|EU|ALU_Block:inst|ALU:inst|FA_4:inst7|Full_Adder:inst7|Half_Adder:inst3
+Sum <= inst.DB_MAX_OUTPUT_PORT_TYPE
+X => inst.IN0
+X => inst2.IN0
+Y => inst.IN1
+Y => inst2.IN1
+C_Out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EU|ALU_Block:inst|ALU:inst|FA_4:inst7|Full_Adder:inst7|Half_Adder:inst2
+Sum <= inst.DB_MAX_OUTPUT_PORT_TYPE
+X => inst.IN0
+X => inst2.IN0
+Y => inst.IN1
+Y => inst2.IN1
+C_Out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EU|ALU_Block:inst|ALU:inst|FA_4:inst7|Full_Adder:inst6
+COUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => Half_Adder:inst3.X
+B => Half_Adder:inst3.Y
+CIN => Half_Adder:inst2.X
+SUM_OUT <= Half_Adder:inst2.Sum
+
+
+|EU|ALU_Block:inst|ALU:inst|FA_4:inst7|Full_Adder:inst6|Half_Adder:inst3
+Sum <= inst.DB_MAX_OUTPUT_PORT_TYPE
+X => inst.IN0
+X => inst2.IN0
+Y => inst.IN1
+Y => inst2.IN1
+C_Out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EU|ALU_Block:inst|ALU:inst|FA_4:inst7|Full_Adder:inst6|Half_Adder:inst2
+Sum <= inst.DB_MAX_OUTPUT_PORT_TYPE
+X => inst.IN0
+X => inst2.IN0
+Y => inst.IN1
+Y => inst2.IN1
+C_Out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EU|ALU_Block:inst|ALU:inst|FA_4:inst7|Full_Adder:inst5
+COUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => Half_Adder:inst3.X
+B => Half_Adder:inst3.Y
+CIN => Half_Adder:inst2.X
+SUM_OUT <= Half_Adder:inst2.Sum
+
+
+|EU|ALU_Block:inst|ALU:inst|FA_4:inst7|Full_Adder:inst5|Half_Adder:inst3
+Sum <= inst.DB_MAX_OUTPUT_PORT_TYPE
+X => inst.IN0
+X => inst2.IN0
+Y => inst.IN1
+Y => inst2.IN1
+C_Out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EU|ALU_Block:inst|ALU:inst|FA_4:inst7|Full_Adder:inst5|Half_Adder:inst2
+Sum <= inst.DB_MAX_OUTPUT_PORT_TYPE
+X => inst.IN0
+X => inst2.IN0
+Y => inst.IN1
+Y => inst2.IN1
+C_Out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EU|ALU_Block:inst|ALU:inst|FA_4:inst7|Full_Adder:inst4
+COUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => Half_Adder:inst3.X
+B => Half_Adder:inst3.Y
+CIN => Half_Adder:inst2.X
+SUM_OUT <= Half_Adder:inst2.Sum
+
+
+|EU|ALU_Block:inst|ALU:inst|FA_4:inst7|Full_Adder:inst4|Half_Adder:inst3
+Sum <= inst.DB_MAX_OUTPUT_PORT_TYPE
+X => inst.IN0
+X => inst2.IN0
+Y => inst.IN1
+Y => inst2.IN1
+C_Out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EU|ALU_Block:inst|ALU:inst|FA_4:inst7|Full_Adder:inst4|Half_Adder:inst2
+Sum <= inst.DB_MAX_OUTPUT_PORT_TYPE
+X => inst.IN0
+X => inst2.IN0
+Y => inst.IN1
+Y => inst2.IN1
+C_Out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EU|ALU_Block:inst|ALU:inst|XNOR_4:inst
+O0 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B0 => inst4.IN0
+A0 => inst4.IN1
+O1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B1 => inst3.IN0
+A1 => inst3.IN1
+O2 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+B2 => inst2.IN0
+A2 => inst2.IN1
+O3 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+B3 => inst.IN0
+A3 => inst.IN1
+
+
+|EU|ALU_Block:inst|ALU:inst|74153:inst4
+1Y <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1GN => 26.IN0
+B => 27.IN0
+A => 29.IN0
+1C0 => 1.IN3
+1C1 => 2.IN3
+1C2 => 3.IN3
+1C3 => 4.IN3
+2Y <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2C0 => 5.IN0
+2GN => 25.IN0
+2C1 => 6.IN0
+2C2 => 7.IN0
+2C3 => 8.IN0
+
+
+|EU|Decoder:inst20
+O_OP0 <= OP0.DB_MAX_OUTPUT_PORT_TYPE
+OP0 => O_OP0.DATAIN
+O_OP1 <= OP1.DB_MAX_OUTPUT_PORT_TYPE
+OP1 => O_OP1.DATAIN
+O_Sel0 <= Sel0.DB_MAX_OUTPUT_PORT_TYPE
+Sel0 => O_Sel0.DATAIN
+O_Sel1 <= Sel1.DB_MAX_OUTPUT_PORT_TYPE
+Sel1 => O_Sel1.DATAIN
+O_Sel2 <= Sel2.DB_MAX_OUTPUT_PORT_TYPE
+Sel2 => O_Sel2.DATAIN
+O_Sel3 <= Sel3.DB_MAX_OUTPUT_PORT_TYPE
+Sel3 => O_Sel3.DATAIN
+
+
+|EU|Reg_File:inst1
+Out0 <= 74153:inst5.1Y
+Reg_B0 <= Reg_4:inst1.Out0
+R_0 => Reg_4:inst1.D0
+R_0 => Reg_4:inst.D0
+R_0 => Reg_4:inst2.D0
+R_1 => Reg_4:inst1.D1
+R_1 => Reg_4:inst.D1
+R_1 => Reg_4:inst2.D1
+R_2 => Reg_4:inst1.D2
+R_2 => Reg_4:inst.D2
+R_2 => Reg_4:inst2.D2
+R_3 => Reg_4:inst1.D3
+R_3 => Reg_4:inst.D3
+R_3 => Reg_4:inst2.D3
+Sel2 => inst1002.IN0
+Sel2 => inst55.IN0
+Sel2 => inst1003.IN0
+Sel2 => 74153:inst7.A
+Sel2 => 74153:inst8.A
+Sel3 => inst1004.IN0
+Sel3 => inst56.IN0
+Sel3 => inst1001.IN1
+Sel3 => 74153:inst7.B
+Sel3 => 74153:inst8.B
+clk => inst10.IN1
+clk => inst4.IN1
+clk => inst9.IN1
+Reg_A0 <= Reg_4:inst.Out0
+Reg_A1 <= Reg_4:inst.Out1
+Reg_C1 <= Reg_4:inst2.Out1
+Reg_C0 <= Reg_4:inst2.Out0
+V0 => 74153:inst5.1C3
+Sel1 => 74153:inst5.B
+Sel1 => 74153:inst6.B
+Sel0 => 74153:inst5.A
+Sel0 => 74153:inst6.A
+Reg_B1 <= Reg_4:inst1.Out1
+V1 => 74153:inst5.2C3
+Out1 <= 74153:inst5.2Y
+Out2 <= 74153:inst6.1Y
+Reg_B2 <= Reg_4:inst1.Out2
+Reg_A2 <= Reg_4:inst.Out2
+Reg_A3 <= Reg_4:inst.Out3
+Reg_C3 <= Reg_4:inst2.Out3
+Reg_C2 <= Reg_4:inst2.Out2
+V2 => 74153:inst6.1C3
+Reg_B3 <= Reg_4:inst1.Out3
+V3 => 74153:inst6.2C3
+Out3 <= 74153:inst6.2Y
+Out4 <= 74153:inst7.1Y
+Out5 <= 74153:inst7.2Y
+Out6 <= 74153:inst8.1Y
+Out7 <= 74153:inst8.2Y
+
+
+|EU|Reg_File:inst1|74153:inst5
+1Y <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1GN => 26.IN0
+B => 27.IN0
+A => 29.IN0
+1C0 => 1.IN3
+1C1 => 2.IN3
+1C2 => 3.IN3
+1C3 => 4.IN3
+2Y <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2C0 => 5.IN0
+2GN => 25.IN0
+2C1 => 6.IN0
+2C2 => 7.IN0
+2C3 => 8.IN0
+
+
+|EU|Reg_File:inst1|Reg_4:inst1
+Out1 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst2.CLK
+clk => inst3.CLK
+clk => inst4.CLK
+clk => inst.CLK
+D1 => inst2.DATAIN
+Out2 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+D2 => inst3.DATAIN
+Out3 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+D3 => inst4.DATAIN
+Out0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+D0 => inst.DATAIN
+
+
+|EU|Reg_File:inst1|Reg_4:inst
+Out1 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst2.CLK
+clk => inst3.CLK
+clk => inst4.CLK
+clk => inst.CLK
+D1 => inst2.DATAIN
+Out2 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+D2 => inst3.DATAIN
+Out3 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+D3 => inst4.DATAIN
+Out0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+D0 => inst.DATAIN
+
+
+|EU|Reg_File:inst1|Reg_4:inst2
+Out1 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst2.CLK
+clk => inst3.CLK
+clk => inst4.CLK
+clk => inst.CLK
+D1 => inst2.DATAIN
+Out2 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+D2 => inst3.DATAIN
+Out3 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+D3 => inst4.DATAIN
+Out0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+D0 => inst.DATAIN
+
+
+|EU|Reg_File:inst1|74153:inst6
+1Y <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1GN => 26.IN0
+B => 27.IN0
+A => 29.IN0
+1C0 => 1.IN3
+1C1 => 2.IN3
+1C2 => 3.IN3
+1C3 => 4.IN3
+2Y <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2C0 => 5.IN0
+2GN => 25.IN0
+2C1 => 6.IN0
+2C2 => 7.IN0
+2C3 => 8.IN0
+
+
+|EU|Reg_File:inst1|74153:inst7
+1Y <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1GN => 26.IN0
+B => 27.IN0
+A => 29.IN0
+1C0 => 1.IN3
+1C1 => 2.IN3
+1C2 => 3.IN3
+1C3 => 4.IN3
+2Y <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2C0 => 5.IN0
+2GN => 25.IN0
+2C1 => 6.IN0
+2C2 => 7.IN0
+2C3 => 8.IN0
+
+
+|EU|Reg_File:inst1|74153:inst8
+1Y <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1GN => 26.IN0
+B => 27.IN0
+A => 29.IN0
+1C0 => 1.IN3
+1C1 => 2.IN3
+1C2 => 3.IN3
+1C3 => 4.IN3
+2Y <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2C0 => 5.IN0
+2GN => 25.IN0
+2C1 => 6.IN0
+2C2 => 7.IN0
+2C3 => 8.IN0
+
+

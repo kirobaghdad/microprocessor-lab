@@ -1,0 +1,165 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ALU_O0",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_O1",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_O2",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_O3",
+					"strict" : false
+				},
+				{
+					"name" : "Reg_A0",
+					"strict" : false
+				},
+				{
+					"name" : "Reg_A1",
+					"strict" : false
+				},
+				{
+					"name" : "Reg_A2",
+					"strict" : false
+				},
+				{
+					"name" : "Reg_A3",
+					"strict" : false
+				},
+				{
+					"name" : "Reg_B0",
+					"strict" : false
+				},
+				{
+					"name" : "Reg_B1",
+					"strict" : false
+				},
+				{
+					"name" : "Reg_B2",
+					"strict" : false
+				},
+				{
+					"name" : "Reg_B3",
+					"strict" : false
+				},
+				{
+					"name" : "Reg_C0",
+					"strict" : false
+				},
+				{
+					"name" : "Reg_C1",
+					"strict" : false
+				},
+				{
+					"name" : "Reg_C2",
+					"strict" : false
+				},
+				{
+					"name" : "Reg_C3",
+					"strict" : false
+				},
+				{
+					"name" : "REGFILE0",
+					"strict" : false
+				},
+				{
+					"name" : "REGFILE1",
+					"strict" : false
+				},
+				{
+					"name" : "REGFILE2",
+					"strict" : false
+				},
+				{
+					"name" : "REGFILE3",
+					"strict" : false
+				},
+				{
+					"name" : "REGFILE4",
+					"strict" : false
+				},
+				{
+					"name" : "REGFILE5",
+					"strict" : false
+				},
+				{
+					"name" : "REGFILE6",
+					"strict" : false
+				},
+				{
+					"name" : "REGFILE7",
+					"strict" : false
+				},
+				{
+					"name" : "OUTSEL0",
+					"strict" : false
+				},
+				{
+					"name" : "OUTSEL1",
+					"strict" : false
+				},
+				{
+					"name" : "OUTSEL2",
+					"strict" : false
+				},
+				{
+					"name" : "OUTSEL3",
+					"strict" : false
+				},
+				{
+					"name" : "V[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Op[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Op[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Op[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Op[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Op[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Op[4]",
+					"strict" : false
+				},
+				{
+					"name" : "V[1]",
+					"strict" : false
+				},
+				{
+					"name" : "V[2]",
+					"strict" : false
+				},
+				{
+					"name" : "V[3]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
