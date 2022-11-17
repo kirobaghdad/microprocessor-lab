@@ -1,17 +1,11 @@
-; multi-segment executable file template.
+.model small
+.stack 64
+.data
+.code
 
-data segment
-    ; add your data here!
-ends
-
-stack segment
-    dw   128  dup(0)
-ends
-
-code segment
 start:
 ; set segment registers:
-    mov ax, data
+    mov ax, @data
     mov ds, ax
     mov es, ax
 
@@ -19,6 +13,24 @@ start:
     mov ah, 0
     mov al, 13h
     int 10h
+    
+    
+    ;Changing the background color to white
+    mov ah, 0ch
+    mov al, 0fh
+    mov dx, 0
+    
+    row:
+    mov cx, 0
+    col:
+    int 10h
+    inc cx
+    cmp cx, 320
+    jne col
+    inc dx
+    cmp dx, 200
+    jne row 
+    
     
     
     ;Drawing a triangle
@@ -74,7 +86,7 @@ start:
     int 10h
     pop dx
     inc cx
-    cmp cx, 120
+    cmp cx, 121
     jne square0
          
     
@@ -88,7 +100,7 @@ start:
     int 10h
     pop cx
     inc dx
-    cmp dx, 111
+    cmp dx, 112
     jne square1
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     
@@ -131,6 +143,6 @@ start:
     
     mov ax, 4c00h ; exit to operating system.
     int 21h    
-ends
+end start
 
-end start ; set entry point and stop the assembler.
+.end ; set entry point and stop the assembler.
